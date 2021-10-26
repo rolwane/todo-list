@@ -19,5 +19,16 @@ function selectTask(e) {
   }
 }
 
+function taskDone(e) {
+  if (e.target.id !== 'lista-tarefas') {
+    if (e.target.classList.contains('completed')) {
+      e.target.classList.remove('completed');
+    } else {
+      e.target.classList.add('completed');
+    }
+  }
+}
+
 document.querySelector('#criar-tarefa').addEventListener('click', addTask);
 document.querySelector('#lista-tarefas').addEventListener('click', selectTask);
+document.querySelector('#lista-tarefas').addEventListener('dblclick', taskDone);
