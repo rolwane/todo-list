@@ -1,8 +1,11 @@
+// minha OL
+const lista = document.querySelector('#lista-tarefas');
+
 function addTask() {
   const input = document.querySelector('#texto-tarefa');
   const li = document.createElement('li');
   li.innerText = input.value;
-  document.querySelector('#lista-tarefas').appendChild(li);
+  lista.appendChild(li);
   input.value = '';
 }
 
@@ -29,6 +32,11 @@ function taskDone(e) {
   }
 }
 
+function clearAll() {
+  lista.innerHTML = '';
+}
+
 document.querySelector('#criar-tarefa').addEventListener('click', addTask);
-document.querySelector('#lista-tarefas').addEventListener('click', selectTask);
-document.querySelector('#lista-tarefas').addEventListener('dblclick', taskDone);
+lista.addEventListener('click', selectTask);
+lista.addEventListener('dblclick', taskDone);
+document.querySelector('#apaga-tudo').addEventListener('click', clearAll);
