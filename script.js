@@ -36,7 +36,15 @@ function clearAll() {
   lista.innerHTML = '';
 }
 
+function clearCompleted() {
+  const completeds = document.querySelectorAll('.completed');
+  for (const completed of completeds) {
+    lista.removeChild(completed);
+  }
+}
+
 document.querySelector('#criar-tarefa').addEventListener('click', addTask);
 lista.addEventListener('click', selectTask);
 lista.addEventListener('dblclick', taskDone);
 document.querySelector('#apaga-tudo').addEventListener('click', clearAll);
+document.querySelector('#remover-finalizados').addEventListener('click', clearCompleted);
