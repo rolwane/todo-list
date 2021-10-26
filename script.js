@@ -2,12 +2,11 @@
 const lista = document.querySelector('#lista-tarefas');
 
 function loadTasks() {
-
   if (!localStorage.items) {
     localStorage.items = '[]';
   }
 
-  let items = JSON.parse(localStorage.items);
+  const items = JSON.parse(localStorage.items);
   for (const item of items) {
     const li = document.createElement('li');
     li.innerText = item.content;
@@ -63,9 +62,9 @@ function clearCompleted() {
 function saveTasks() {
   const lis = document.querySelectorAll('li');
 
-  let arrLis = [];
-  for (let i = 0; i < lis.length; i++) {
-    let obj = { content: '', classes: ''}
+  const arrLis = [];
+  for (let i = 0; i < lis.length; i += 1) {
+    const obj = { content: '', classes: '' };
     obj.content = lis[i].innerText;
     obj.classes = lis[i].className;
     arrLis.push(obj);
