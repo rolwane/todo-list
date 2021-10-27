@@ -71,9 +71,9 @@ function moveUp() {
   if (liSelected !== null) {
     const previouSibling = liSelected.previousElementSibling;
     if (previouSibling !== null) {
-      liSelected.insertAdjacentElement('afterEnd', previouSibling); 
+      liSelected.insertAdjacentElement('afterEnd', previouSibling);
     }
-  }  
+  }
 }
 
 function moveDown() {
@@ -89,7 +89,7 @@ function moveDown() {
 function removeSelected() {
   const selected = document.querySelector('.selected');
   if (selected !== null) {
-    lista.removeChild(selected); 
+    lista.removeChild(selected);
   }
 }
 
