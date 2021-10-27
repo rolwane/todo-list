@@ -5,14 +5,13 @@ function loadTasks() {
   if (!localStorage.items) {
     localStorage.items = '[]';
   }
-
   const items = JSON.parse(localStorage.items);
-  for (const item of items) {
+  items.forEach((item) => {
     const li = document.createElement('li');
     li.innerText = item.content;
     li.className = item.classes;
     lista.appendChild(li);
-  }
+  });
 }
 
 loadTasks();
@@ -27,14 +26,10 @@ function addTask() {
 
 function selectTask(e) {
   if (e.target.id !== 'lista-tarefas') {
-    if (e.target.classList.contains('selected')) {
-      e.target.classList.remove('selected');
-    } else {
-      if (document.querySelector('.selected')) {
-        document.querySelector('.selected').classList.remove('selected');
-      }
-      e.target.classList.add('selected');
+    if (document.querySelector('.selected')) {
+      document.querySelector('.selected').classList.remove('selected');
     }
+    e.target.classList.add('selected');
   }
 }
 
@@ -54,14 +49,13 @@ function clearAll() {
 
 function clearCompleted() {
   const completeds = document.querySelectorAll('.completed');
-  for (const completed of completeds) {
+  completeds.forEach((completed) => {
     lista.removeChild(completed);
-  }
+  });
 }
 
 function saveTasks() {
   const lis = document.querySelectorAll('li');
-
   const arrLis = [];
   for (let i = 0; i < lis.length; i += 1) {
     const obj = { content: '', classes: '' };
