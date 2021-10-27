@@ -66,9 +66,39 @@ function saveTasks() {
   localStorage.items = JSON.stringify(arrLis);
 }
 
+function moveUp() {
+  const liSelected = document.querySelector('.selected');
+  if (liSelected !== null) {
+    const previouSibling = liSelected.previousElementSibling;
+    if (previouSibling !== null) {
+      liSelected.insertAdjacentElement('afterEnd', previouSibling); 
+    }
+  }  
+}
+
+function moveDown() {
+  const liSelected = document.querySelector('.selected');
+  if (liSelected !== null) {
+    const nextSibling = liSelected.nextElementSibling;
+    if (nextSibling !== null) {
+      nextSibling.insertAdjacentElement('afterEnd', liSelected);
+    }
+  }
+}
+
+function removeSelected() {
+  const selected = document.querySelector('.selected');
+  if (selected !== null) {
+    lista.removeChild(selected); 
+  }
+}
+
 document.querySelector('#criar-tarefa').addEventListener('click', addTask);
 lista.addEventListener('click', selectTask);
 lista.addEventListener('dblclick', taskDone);
 document.querySelector('#apaga-tudo').addEventListener('click', clearAll);
 document.querySelector('#remover-finalizados').addEventListener('click', clearCompleted);
 document.querySelector('#salvar-tarefas').addEventListener('click', saveTasks);
+document.querySelector('#mover-cima').addEventListener('click', moveUp);
+document.querySelector('#mover-baixo').addEventListener('click', moveDown);
+document.querySelector('#remover-selecionado').addEventListener('click', removeSelected);
