@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Quicksand, sans-serif;
+}
+
 .selected {
   background-color: grey;
 }
@@ -5,4 +14,96 @@
 .completed {
   text-decoration: line-through solid black;
   color: rgb(51 , 51 , 51);
+}
+
+header {
+  text-align: center;
+  padding: 40px;
+  line-height: 40px;
+}
+
+header h1 {
+  color: rgb(51 , 51 , 51);
+}
+
+#funcionamento {
+  color: rgb(119 , 119 , 119);
+  font-weight: 500;
+}
+
+main {
+  padding: 30px;
+  position: relative;
+}
+
+#main-functions {
+  display: flex;
+  gap: 10px;
+}
+
+#texto-tarefa {
+  width: 100%;
+  flex: 1;
+  padding: 12px;
+  background: rgb(238 , 238 , 238);
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 5px;
+  outline: none;
+}
+
+.btn-action {
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+  background-color: rgb(150 , 153 , 163);
+  font-weight: 600;
+}
+
+.btn-action:hover {
+  background-color: rgb(139 , 142 , 153);
+}
+
+.add {
+  background-color: rgb(47 , 193 , 140);
+}
+
+.add:hover {
+  background-color: rgb(42 , 173 , 126);
+}
+
+.save {
+  background-color: rgb(25 , 140 , 207);
+}
+
+.save:hover {
+  background-color: rgb(20 , 123 , 184);
+}
+
+#lista-tarefas {
+  margin: 50px;
+}
+
+#lista-tarefas li {
+  padding: 15px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+#lista-tarefas li:hover {
+  background-color: rgb(221 , 221 , 221);
+}
+
+.trash , .clear {
+  background-color: rgb(196 , 33 , 66);
+}
+
+.trash:hover , .clear:hover {
+  background-color: rgb(173 , 28 , 57);
 }

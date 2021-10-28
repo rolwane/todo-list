@@ -13,21 +13,30 @@
   
   <header>
     <h1>Minha Lista de Tarefas</h1>
-    <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
+    <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo.</p>
   </header>
 
   <main>
-    <input type="text" id="texto-tarefa" placeholder="Digite uma tarefa">
-    <button id="criar-tarefa">Criar tarefa</button>
-    <button id="apaga-tudo">Apagar tudo</button>
-    <button id="remover-finalizados">Remover finalizados</button>
-    <button id="salvar-tarefas">Salvar tarefas</button>
+
+    <section id="main-functions">
+      <input type="text" id="texto-tarefa" placeholder="Adicione uma nova tarefa">
+      <button id="criar-tarefa" class="btn-action add"><i class="fas fa-plus"></i></button>
+      <button id="salvar-tarefas" class="btn-action save"><i class="fas fa-save"></i></button>
+    </section>
+
+    
+    
+    
     <ol id="lista-tarefas"></ol>
-    <button id="mover-cima">Subir</button>
-    <button id="mover-baixo">Descer</button>
-    <button id="remover-selecionado">Remover Selecionado</button>
+
+    <button id="mover-cima" class="btn-action"><i class="fas fa-chevron-up"></i></button>
+    <button id="mover-baixo" class="btn-action"><i class="fas fa-chevron-down"></i></button>
+    <button id="remover-finalizados" class="btn-action">Remover Finalizados</button>
+    <button id="remover-selecionado" class="btn-action trash"><i class="fas fa-trash"></i></button>
+    <button id="apaga-tudo" class="btn-action clear"><i class="fas fa-eraser"></i> Limpar Lista</button>
   </main>
 
   <script src="script.js"></script>
+  <script src="https://kit.fontawesome.com/018b0c6076.js" crossorigin="anonymous"></script>
 </body>
 </html>
